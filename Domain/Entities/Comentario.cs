@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class Comentario : BaseEntity
     {
         public string Conteudo { get; set; }
+        public Guid ComentaristaId { get; set; }
         public virtual Usuario Comentarista { get; set; }
-        public virtual Receita ReceitaId { get; set; }
+        public Guid ReceitaId { get; set; }
+        public virtual Receita Receita { get; set; }
     }
 }
