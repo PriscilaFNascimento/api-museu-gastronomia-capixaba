@@ -3,6 +3,7 @@ using System;
 using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Migrations
 {
     [DbContext(typeof(MuseuGastronomiaCapixabaDbContext))]
-    partial class MuseuGastronomiaCapixabaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230730203529_nullable-uriFotoPerfil-usuario")]
+    partial class nullableuriFotoPerfilusuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,9 +76,6 @@ namespace Data.Migrations
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
 
-                    b.Property<decimal>("PercentualValorDiario")
-                        .HasColumnType("decimal(6,3)");
-
                     b.Property<decimal>("QuantidadePorcao")
                         .HasColumnType("decimal(6,3)");
 
@@ -84,6 +84,9 @@ namespace Data.Migrations
 
                     b.Property<DateTime>("Registro")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("ValorDiario")
+                        .HasColumnType("decimal(6,3)");
 
                     b.HasKey("Id");
 
@@ -137,14 +140,6 @@ namespace Data.Migrations
 
                     b.Property<DateTime>("Registro")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Rendimento")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TempoPreparo")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<Guid>("UltimoEditorId")
                         .HasColumnType("uuid");

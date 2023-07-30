@@ -21,6 +21,8 @@ namespace Domain.Entities
         public string Historia { get; set; }
         public string Porcao { get; set; }
         public int PorcoesReceita { get; set; }
+        public string Rendimento { get; set; }
+        public string TempoPreparo { get; set; }
         public virtual Usuario Criador { get; set; }
         public virtual Guid CriadorId { get; set; }
         public virtual Usuario UltimoEditor { get; set; }

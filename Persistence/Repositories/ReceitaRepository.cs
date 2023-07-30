@@ -29,6 +29,8 @@ namespace Data.Repositories
                             Historia = r.Historia,
                             Porcao = r.Porcao,
                             PorcoesReceita = r.PorcoesReceita,
+                            TempoPreparo = r.TempoPreparo,
+                            Rendimento = r.Rendimento,
                             NomeCriador = u.Nome,
                             CriadorId = u.Id,
                             NomeEditor = ed.Nome,

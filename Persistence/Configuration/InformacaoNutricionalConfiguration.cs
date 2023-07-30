@@ -16,7 +16,7 @@ namespace Data.Configuration
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(255);
             builder.Property(x => x.QuantidadePorcao).IsRequired().HasColumnType("decimal(6,3)");
-            builder.Property(x => x.ValorDiario).IsRequired().HasColumnType("decimal(6,3)");
+            builder.Property(x => x.PercentualValorDiario).IsRequired().HasColumnType("decimal(6,3)");
 
 
             builder

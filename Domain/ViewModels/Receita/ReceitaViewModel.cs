@@ -9,6 +9,8 @@
         public string Historia { get; set; }
         public string Porcao { get; set; }
         public int PorcoesReceita { get; set; }
+        public string Rendimento { get; set; }
+        public string TempoPreparo { get; set; }
         public string NomeCriador { get; set; }
         public virtual Guid CriadorId { get; set; }
         public string NomeEditor { get; set; }

@@ -15,7 +15,7 @@
         public string Email { get; set; }
         public DateTime Nascimento { get; set; }
         public string SenhaHash { get; set; }
-        public Uri UriFotoPerfil { get; set; }
+        public Uri? UriFotoPerfil { get; set; }
         public IEnumerable<Receita> ReceitasCriadas { get; set; }
         public IEnumerable<Receita> ReceitasEditadas { get; set; }
         public IEnumerable<Comentario> Comentarios { get; set; }

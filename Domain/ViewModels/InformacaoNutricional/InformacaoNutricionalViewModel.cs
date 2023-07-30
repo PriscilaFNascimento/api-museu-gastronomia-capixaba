@@ -4,6 +4,6 @@
     {
         public string Nome { get; set; }
         public decimal QuantidadePorcao { get; set; }
-        public decimal ValorDiario { get; set; }
+        public decimal PercentualValorDiario { get; set; }
     }
 }
