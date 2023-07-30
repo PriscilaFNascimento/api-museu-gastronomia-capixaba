@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api-museu-gastronomia-capixaba", "api-museu-gastronomia-capixaba\api-museu-gastronomia-capixaba.csproj", "{1CDDBC9E-B199-48CE-B416-3DA42C8E2B6F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0EFBA65-F6AD-40C5-8962-FE248498BF9A} = {D0EFBA65-F6AD-40C5-8962-FE248498BF9A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{E30D5A88-969E-4562-B64C-1F58CE373AF6}"
 EndProject

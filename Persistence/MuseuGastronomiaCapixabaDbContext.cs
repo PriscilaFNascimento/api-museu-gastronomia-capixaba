@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Data.Configuration;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data
@@ -16,7 +17,11 @@ namespace Data
         public DbSet<Comentario> Comentarios { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 
-        { 
+        {
+            modelBuilder.ApplyConfiguration(new ReceitaConfiguration());
+            modelBuilder.ApplyConfiguration(new InformacaoNutricionalConfiguration());
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new ReceitaConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
