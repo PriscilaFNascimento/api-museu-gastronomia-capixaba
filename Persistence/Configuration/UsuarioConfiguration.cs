@@ -18,6 +18,7 @@ namespace Data.Configuration
             builder.Property(x => x.Sobrenome).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Email).IsRequired().HasMaxLength(100);
             builder.Property(x => x.Nascimento).IsRequired();
+            builder.Property(x => x.SenhaHash).IsRequired();
         }
     }
 }
