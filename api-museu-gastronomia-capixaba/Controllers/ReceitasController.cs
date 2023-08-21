@@ -15,13 +15,13 @@ namespace api_museu_gastronomia_capixaba.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<ReceitaViewModel>), 200)]
+        [ProducesResponseType(typeof(IEnumerable<ReceitaListViewModel>), 200)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult<IEnumerable<ReceitaViewModel>>> ListarReceitas()
+        public async Task<ActionResult<IEnumerable<ReceitaListViewModel>>> ListarReceitas()
         {
             try
             {
-                IEnumerable<ReceitaViewModel> response = await _receitaService.ObterReceitasAsync();
+                IEnumerable<ReceitaListViewModel> response = await _receitaService.ObterReceitasAsync();
                 return Ok(response);
             }
             catch(Exception ex)

@@ -5,7 +5,7 @@ namespace Domain.Repositories
 {
     public interface IReceitaRepository
     {
-        Task<IEnumerable<ReceitaViewModel>> ObterReceitasAsync();
+        Task<IEnumerable<Receita>> ObterReceitasAsync();
         Task<ReceitaViewModel> ObterReceitaModelPeloIdAsync(Guid id);
         Task<Receita> ObterReceitaPeloIdAsync(Guid id);
         Task InserirReceitaAsync(Receita request);

@@ -19,8 +19,20 @@ builder.Services.AddDbContext<MuseuGastronomiaCapixabaDbContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("DbConnection"))
     );
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+      policy =>
+      {
+          policy.AllowAnyOrigin()
+             .AllowAnyHeader()
+             .AllowAnyMethod();
+      });
+});
+
 builder.Services.AddScoped<IReceitaService, ReceitaService>();
 builder.Services.AddScoped<IReceitaRepository, ReceitaRepository>();
+builder.Services.AddScoped<IInformacaoNutricionalService, InformacaoNutricionalService>();
 builder.Services.AddScoped<IInformacaoNutricionalRepository, InformacaoNutricionalRepository>();
 
 builder.Services.AddAutoMapper(typeof(ReceitaProfile));
@@ -36,6 +48,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

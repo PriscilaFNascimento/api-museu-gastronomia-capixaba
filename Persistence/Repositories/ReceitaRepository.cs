@@ -14,31 +14,9 @@ namespace Data.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<ReceitaViewModel>> ObterReceitasAsync()
+        public async Task<IEnumerable<Receita>> ObterReceitasAsync()
         {
-            var query = (from r in _dbContext.Receitas
-                        join u in _dbContext.Usuarios on r.CriadorId equals u.Id
-                        join ed in _dbContext.Usuarios on r.UltimoEditorId equals ed.Id
-                        select new ReceitaViewModel()
-                        {
-                            Id = r.Id,
-                            Nome = r.Nome,
-                            UriImagem = r.UriImagem,
-                            Ingredientes = r.Ingredientes,
-                            ModoPreparo = r.ModoPreparo,
-                            Historia = r.Historia,
-                            Porcao = r.Porcao,
-                            PorcoesReceita = r.PorcoesReceita,
-                            TempoPreparo = r.TempoPreparo,
-                            Rendimento = r.Rendimento,
-                            NomeCriador = u.Nome,
-                            CriadorId = u.Id,
-                            NomeEditor = ed.Nome,
-                            EditorId = ed.Id,
-                            Registro = r.Registro,
-                            Atualizacao = r.Atualizacao,
-                            Desativacao = r.Desativacao
-                        })
+            var query = _dbContext.Receitas
                         .AsQueryable()
                         .Where(x => x.Desativacao == null);
 

@@ -12,6 +12,8 @@ namespace Domain.Profiles
                 .ForMember(x => x.NomeCriador, opt => opt.MapFrom(src => src.Criador.Nome))
                 .ForMember(x => x.NomeEditor, opt => opt.MapFrom(src => src.UltimoEditor.Nome));
 
+            CreateMap<Receita, ReceitaListViewModel>();
+
             CreateMap<InserirReceitaViewModel, Receita>()
                 .ForMember(x => x.InformacoesNutricionais, opt => opt.Ignore());
         }
