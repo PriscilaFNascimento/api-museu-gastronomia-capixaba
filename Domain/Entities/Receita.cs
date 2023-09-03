@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,13 @@ namespace Domain.Entities
         public string Ingredientes { get; set; }
         public string ModoPreparo { get; set; }
         public string Historia { get; set; }
-        public string Porcao { get; set; }
+        public decimal Porcao { get; set; }
+        public EnumTamanhoPorcao UnidadeMedidaPorcao { get; set; }
         public int PorcoesReceita { get; set; }
-        public string Rendimento { get; set; }
-        public string TempoPreparo { get; set; }
+        public decimal Rendimento { get; set; }
+        public EnumRendimentoReceita UnidadeMedidaRendimento { get; set; }
+        public decimal TempoPreparo { get; set; }
+        public EnumTempoPreparo UnidadeTempoPreparo { get; set; }
         public virtual Usuario Criador { get; set; }
         public virtual Guid CriadorId { get; set; }
         public virtual Usuario UltimoEditor { get; set; }

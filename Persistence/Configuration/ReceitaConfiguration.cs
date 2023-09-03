@@ -13,8 +13,13 @@ namespace Data.Configuration
             builder.Property(x => x.Ingredientes).IsRequired().HasMaxLength(1500);
             builder.Property(x => x.ModoPreparo).IsRequired().HasMaxLength(3000);
             builder.Property(x => x.Historia).IsRequired().HasMaxLength(3000);
-            builder.Property(x => x.Porcao).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.Porcao).IsRequired();
             builder.Property(x => x.PorcoesReceita).IsRequired();
+            builder.Property(x => x.TempoPreparo).IsRequired();
+            builder.Property(x => x.Rendimento).IsRequired();
+            builder.Property(x => x.UnidadeMedidaPorcao).IsRequired();
+            builder.Property(x => x.UnidadeMedidaRendimento).IsRequired();
+            builder.Property(x => x.UnidadeTempoPreparo).IsRequired();
 
             builder
                 .HasOne(x => x.Criador)
