@@ -19,9 +19,9 @@ namespace Domain.Services
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<ReceitaListViewModel>> ObterReceitasAsync()
+        public async Task<IEnumerable<ReceitaListViewModel>> ObterReceitasAsync(BaseRequestViewModel request)
         {
-            IEnumerable<Receita> entities = await _receitaRepository.ObterReceitasAsync();
+            IEnumerable<Receita> entities = await _receitaRepository.ObterReceitasAsync(request);
 
             IEnumerable<ReceitaListViewModel> models = _mapper.Map<IEnumerable<ReceitaListViewModel>>(entities);
 

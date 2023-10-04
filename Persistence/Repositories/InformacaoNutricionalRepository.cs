@@ -34,7 +34,7 @@ namespace Data.Repositories
 
         public async Task RemoverInformacoesPorReceitaIdAsync(Guid receitaId)
         {
-            var informacoes = _dbContext.InformacoesNutricionais
+            var informacoes = await _dbContext.InformacoesNutricionais
                                     .Where(x => x.ReceitaId == receitaId)
                                     .ToListAsync();
 

@@ -4,7 +4,7 @@ namespace Domain.Services.Interfaces
 {
     public interface IReceitaService
     {
-        Task<IEnumerable<ReceitaListViewModel>> ObterReceitasAsync();
+        Task<IEnumerable<ReceitaListViewModel>> ObterReceitasAsync(BaseRequestViewModel request);
         Task<ReceitaViewModel> ObterReceitaPeloIdAsync(Guid id);
         Task InserirReceitaAsync(InserirReceitaViewModel request);
         Task AtualizarReceitaAsync(Guid id, InserirReceitaViewModel request);

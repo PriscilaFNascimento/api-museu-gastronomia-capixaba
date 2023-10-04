@@ -14,11 +14,22 @@ namespace Data.Repositories
             _dbContext = dbContext;
         }
 
-        public async Task<IEnumerable<Receita>> ObterReceitasAsync()
+        public async Task<IEnumerable<Receita>> ObterReceitasAsync(BaseRequestViewModel request)
         {
             var query = _dbContext.Receitas
                         .AsQueryable()
                         .Where(x => x.Desativacao == null);
+
+            if(request.OrderByRegistro)
+            {
+                query = query.OrderBy(x => x.Registro);
+            }
+            else
+            {
+                query = query.OrderBy(x => x.Nome);
+            }
+
+            query = query.Skip((request.PageNumber - 1) * request.PageSize).Take(request.PageSize);
 
             return await query.ToListAsync();
         }
