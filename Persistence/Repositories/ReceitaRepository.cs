@@ -22,7 +22,7 @@ namespace Data.Repositories
 
             if(request.OrderByRegistro)
             {
-                query = query.OrderBy(x => x.Registro);
+                query = query.OrderByDescending(x => x.Registro);
             }
             else
             {
